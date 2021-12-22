@@ -1,0 +1,40 @@
+.container {
+  max-width: 400px;
+}
+
+.primary-background {
+  background-color: rgb(25, 77, 121);
+}
+
+.secundary-background {
+  background-color: #1a01fd;
+}
+
+input[type=text],
+input[type=text]:focus {
+  color: rgb(14, 115, 197);
+  border: none;
+  background: rgb(233, 255, 251);
+  max-width: 400px;
+}
+
+.list-group-item:hover {
+  color: #1a01fd
+}
+
+.todos-container li {
+  background: #528cb3;
+}
+
+.delete {
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: #ff0000;
+}
+
+.hidden {
+  display: none;
+}
+
