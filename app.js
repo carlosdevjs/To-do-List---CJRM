@@ -7,12 +7,14 @@ const insertContentInTodoList = event => {
   event.preventDefault()
   const inputValue = event.target.add.value.trim()
 
+if (inputValue) {
   todosContainer.innerHTML += `
    <li class="list-group-item d-flex justify-content-between align-items-center" data-list="delete">
      <span>${inputValue}</span>
      <i class="far fa-trash-alt delete" data-trash="off-line"></i>
    </li>`
-
+  }
+  
   event.target.reset()
 }
 
