@@ -28,8 +28,8 @@ const deleteLiTodoList = event => {
 
 const filterTodos = todos => {
   todos.forEach(({ todo, shouldBeVisible }) => {
-    todo.classList.add(shouldBeVisible ? 'd-block' : 'hidden')
-    todo.classList.remove(shouldBeVisible ? 'hidden' : 'd-block')
+    todo.classList.add(shouldBeVisible ? 'd-flex' : 'hidden')
+    todo.classList.remove(shouldBeVisible ? 'hidden' : 'd-flex')
   })
 }
 
