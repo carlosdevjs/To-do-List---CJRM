@@ -7,10 +7,6 @@ const insertContentInTodoList = event => {
   event.preventDefault()
   const inputValue = event.target.add.value.trim()
 
-  if (inputValue === '') {
-    inputValue.reset()
-  }
-
   todosContainer.innerHTML += `
    <li class="list-group-item d-flex justify-content-between align-items-center" data-list="delete">
      <span>${inputValue}</span>
@@ -21,30 +17,28 @@ const insertContentInTodoList = event => {
 }
 
 const deleteLiTodoList = event => {
-  const clickedElement = event.target.dataset.trash
+  const trashWasClicked = event.target.dataset.trash
   
-  if (clickedElement) {
+  if (trashWasClicked) {
     event.target.parentElement.remove()
   }
 }
 
+const filterTodos = todos => {
+  todos.forEach(({ todo, shoudBeVisible }) => {
+    todo.classList.add(shouldBeVisible ? 'd-flex' : 'hidden')
+    todo.classList.remove(shouldBeVisible ? 'hidden' : 'd-flex')
+  })
+}
+
 const searchContentTodoList = event => {
   const inputValue = event.target.value.trim().toLowerCase()
+  const todos = Array.from(todosContainer.children).map(todo => ({
+    todo,
+    shouldBeVisible: todo.textContent.toLowerCase().includes()
+  }))
   
-  const showTodosList = (arr, met1, className1, className2) => {
-    Array.from(arr)
-    .filter(met1)
-    .forEach(todo => {
-      todo.classList.remove(className1)
-      todo.classList.add(className2)
-    })
-  }
-  
-  showTodosList(todosContainer.children, todo => !todo.textContent.toLowerCase()
-    .includes(inputValue), 'd-flex', 'hidden')
-  
-  showTodosList(todosContainer.children, todo => todo.textContent.toLowerCase()
-    .includes(inputValue), 'hidden', 'd-flex')
+  filterTodos(todos)
 }
 
 formAddTodo.addEventListener('submit', insertContentInTodoList)
