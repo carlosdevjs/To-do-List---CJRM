@@ -37,7 +37,7 @@ const searchContentTodoList = event => {
   const inputValue = event.target.value.trim().toLowerCase()
   const todos = Array.from(todosContainer.children).map(todo => ({
     todo,
-    shouldBeVisible: todo.textContent.toLowerCase().includes()
+    shouldBeVisible: todo.textContent.toLowerCase().includes(inputValue)
   }))
   
   filterTodos(todos)
