@@ -3,7 +3,7 @@
 }
 
 .primary-background {
-  background-color: rgb(25, 77, 121);
+  background-color: #d13434;
 }
 
 .secundary-background {
@@ -37,4 +37,15 @@ input[type=text]:focus {
 .hidden {
   display: none;
 }
+
+.list-group-item {
+  border-bottom: 2px solid #000;
+}
+
+@media (min-width: 768px) {
+  .time {
+    font-size: 2em;
+  }
+}
+
 
