@@ -1,7 +1,25 @@
 const formAddTodo = document.querySelector('.form-add-todo')
 const inputFormSearch = document.querySelector('.form-search input')
 const todosContainer = document.querySelector('.todos-container')
-const lis = document.querySelectorAll('li')
+const dataTimerClock = document.querySelector('[data-js="data-timer"]')
+
+const formatDataUnit = unit => String(unit).length === 1 ? `0${unit}` : unit
+
+const getClockHTML = (hours, minute, second) => `
+  <span>${hours}</spnan> :
+  <span>${minute}</spnan> :
+  <span>${second}</spnan>
+`
+const updateClock = () => {
+  const clock = new Date()
+  const hours = formatDataUnit(clock.getHours())
+  const minute = formatDataUnit(clock.getMinutes())
+  const second = formatDataUnit(clock.getSeconds())
+
+  return dataTimerClock.innerHTML = getClockHTML(hours, minute, second)
+}
+
+setInterval(updateClock, 1000)
 
 const insertContentInTodoList = event => {
   event.preventDefault()
