@@ -28,7 +28,7 @@ const insertContentInTodoList = event => {
 if (inputValue) {
   todosContainer.innerHTML += `
    <li class="list-group-item d-flex justify-content-between align-items-center" data-list="delete">
-     <span>${inputValue}</span>
+     <span class="text-break">${inputValue}</span>
      <i class="far fa-trash-alt delete" data-trash="off-line"></i>
    </li>`
   }
