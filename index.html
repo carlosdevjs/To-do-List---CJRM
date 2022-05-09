@@ -20,19 +20,19 @@
     <ul class="todos-container list-group mx-auto text-light d-block" data-container="container" >
       <li class="list-group-item d-flex justify-content-between align-items-center"
       data-list="delete" data-id="0">
-        <span>Assistir Breaking Bad</span>
+        <span class="text-break">Assistir Breaking Bad</span>
         <i class="far fa-trash-alt delete" data-trash="off-line"></i>
       </li>
 
       <li class="list-group-item d-flex justify-content-between align-items-center"
       data-list="delete" data-id="1">
-        <span>Planejar aulas</span>
+        <span class="text-break">Planejar aulas</span>
         <i class="far fa-trash-alt delete" data-trash="off-line"></i>
       </li>
 
       <li class="list-group-item d-flex justify-content-between align-items-center"
       data-list="delete" data-id="2">
-        <span>Fazer exercícios físicos</span>
+        <span class="text-break">Fazer exercícios físicos</span>
         <i class="far fa-trash-alt delete" data-trash="off-line"></i>
       </li>
     </ul>
@@ -41,6 +41,9 @@
       <label class="text-light">Adicionar to-do</label>
       <input class="form-control m-auto" type="text" name="add"/>
     </form>
+    <div class="timer-current">
+      <p class="text-center text-light"><span class="fs-3 timer" data-js="data-timer"></span></p>
+    </div>
   </div>
 
   <script src="./app.js"></script>
